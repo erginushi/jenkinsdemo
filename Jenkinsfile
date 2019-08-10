@@ -1,19 +1,6 @@
 node {
     def app
 
-	stage("Fix the permission issue") {
-
-        agent any
-
-        steps {
-		import jenkins.model.*
-		jenkins = Jenkins.instance
-       		sh "sudo chown root:jenkins /run/docker.sock"
-        }
-
-    }
-
-
     stage('Clone repository') {
         /* Cloning the Repository to our Workspace */
 
