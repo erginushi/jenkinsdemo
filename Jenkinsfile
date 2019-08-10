@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image */
 
-        app = docker.build("rchidana/nodeapp")
+        sh 'sudo docker build -t rchidana/nodeapp .'
     }
 
     stage('Test image') {
